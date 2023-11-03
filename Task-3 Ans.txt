@@ -1,0 +1,477 @@
+No-1 :
+
+package person;
+
+public class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+
+
+package person;
+
+public class person1 {
+		  public static void main(String[] args) {
+		    Person person1 = new Person("Kumar", 21);
+		    System.out.println(person1.getName() + " age is " + person1.getAge());
+		    }
+		}
+
+Input = Kumar,21
+
+Output = Kumar age is 21
+
+------------------------------------------------------------------------------------------------------
+No-2 :
+
+package org.employee.java;
+
+
+public class Employee {
+		  private int Id;
+		  private String firstname;
+		  private String lastname;
+		  private int salary;
+		  private String name;
+		  private int Annualsalary;
+		 
+		  public Employee(int Id, String firstname, String lastname, int salary, String name,int Annualsalary) {
+			this.Id = Id; 
+		    this.firstname = firstname;
+		    this.lastname = lastname;
+		    this.salary = salary;
+		    this.name = name;
+		    this.Annualsalary = Annualsalary;
+		  }
+		  
+		  public int getId() {
+			return Id;
+		  }
+		  public void setId(int Id) {
+			this.Id=Id;
+		  }
+
+		  public String getfirstname(){
+		    return firstname;
+		  }
+
+		  public void setName(String firstname) {
+		    this.firstname = firstname;
+		  }
+
+		  public String getlastname() {
+		    return lastname;
+		  }
+
+		  public void setJobTitle(String lastname) {
+		    this.lastname = lastname;
+		  }
+
+		  public int getSalary() {
+		    return salary;
+		  }
+
+		  public void setSalary(int salary) {
+		    this.salary = salary;
+		  }
+		  
+		  public void name(String name) {
+			 name = firstname +lastname;
+		  }
+		  
+		  public void AnnualSalary(int multiply) {
+			    Annualsalary = salary * 12;
+			  }
+		  
+		  public void raiseSalary(int percentage) {
+			    salary= salary + salary * percentage / 100;
+		  }
+		  
+		  public void AnnualSalary1(int percentage) {
+			    Annualsalary = Annualsalary + Annualsalary * percentage / 100;
+			  }
+		  
+		  public void printEmployeeDetails() {
+			System.out.println("ID: "+ Id);
+		    System.out.println("First Name: " + firstname);
+		    System.out.println("Last Name: " + lastname);
+		    System.out.println("Salary: " + salary);
+		    System.out.println("Name: "+ name);
+		    System.out.println("AnnualSalary: " + Annualsalary);
+		  }
+		}
+
+
+
+	package org.employee.java;
+
+public class Main {
+	public static void main(String[] args) {
+
+	    Employee employee1 = new Employee(54321, "mathan", "hari", 4000, "mathanhari", 48000);
+	    
+	    System.out.println("\nEmployee Details:");
+	    employee1.printEmployeeDetails();
+	    
+	    employee1.raiseSalary(10);
+	    employee1.AnnualSalary1(10);
+	    
+	    System.out.println("\nAfter raising salary:");
+	    System.out.println("\n10% for 'mathanhari':");
+	    
+	    employee1.printEmployeeDetails();
+	    	}
+	}
+	
+
+
+Input = setter method
+
+Output =
+
+Employee Details:
+ID: 54321
+First Name: mathan
+Last Name: hari
+Salary: 4000
+Name: mathanhari
+AnnualSalary: 48000
+
+After raising salary:
+
+10% for 'mathanhari':
+ID: 54321
+First Name: mathan
+Last Name: hari
+Salary: 4400
+Name: mathanhari
+AnnualSalary: 52800
+
+-------------------------------------------------------------------------------------------------------------------------------------
+No-3 : 
+
+package org.circle.java;
+
+public class Circle {
+
+	
+			  private double radius;
+
+			  public Circle(double radius) {
+			    this.radius = radius;
+			  }
+
+			  public double getRadius() {
+			    return radius;
+			  }
+
+			  public void setRadius(double radius) {
+			    this.radius = radius;
+			  }
+
+			  public double getCircumference() {
+			    return 2 * Math.PI * radius;
+			  }
+	
+
+	}
+	
+
+package org.circle.java;
+
+public class Main {
+		    public static void main(String[] args) {
+		    int r = 5;
+		    Circle circle = new Circle(r);
+		    System.out.println("Radius of the circle is " + r);
+		    System.out.println("The circumference of the circle is " + circle.getCircumference());
+		    
+		  }
+		}
+
+
+Input = 5
+
+Output = 
+	Radius of the circle is 5
+	The circumference of the circle is 31.41592653589793
+----------------------------------------------------------------------------------------------------------------------------------------------
+No-4 :
+
+public class BankAccount {
+	private long accountNumber;
+	private String accountName;
+	private double balance;
+	
+	//setter method 
+	public void setAccountNumber(long accountNumber) {
+		this.accountNumber=accountNumber;
+	}
+	
+	public void setAccountName(String accountholdername) {
+		this.accountName=accountholdername;
+	}
+	
+	public void setBalance(double balance) {
+		this.balance=balance;
+	}
+	
+	//Getter method 
+	public long getAccountNumber() {
+		return accountNumber;
+	}
+	public String getAccountHoldername() {
+		return accountName;
+	}
+	
+	public double getBalance() {
+		return balance;
+	}
+	
+	//Deposit	
+	public void deposit(double amount) {
+		if(amount>0) {
+			balance=balance+amount;
+			System.out.println(amount +" is deposited .Current balance is"+balance);
+		}else {
+			System.out.println("Invalid amount.Deposit failed.");
+		}
+	}
+	
+	//withdraw
+	public void withdraw(double amount) {
+		//logic 
+		if(amount>0&& balance>=amount) {
+			balance=balance-amount;
+			System.out.println(amount+" is withdrawan. Current Balance is"+balance);
+		}else {
+			System.out.println("Insufficient balance or invalid amount.Withdrawan failed...");
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		BankAccount account=new BankAccount();
+		
+		account.setAccountNumber(345623);
+		account.setAccountName("Karthik");
+		account.setBalance(10000.0);
+		
+		System.out.println("Account Number :"+ account.getAccountNumber());
+		System.out.println("Account Holder :" +account.getAccountHoldername());
+		System.out.println("Initial Balance "+account.getBalance());
+		
+		
+		account.deposit(500.0);
+		account.withdraw(200.0);
+		account.withdraw(2000);
+		
+	}
+
+}
+
+Input = 
+
+		account.deposit(500.0);
+		account.withdraw(200.0);
+		account.withdraw(2000);
+
+Output = 
+
+Account Number :345623
+Account Holder :Karthik
+Initial Balance 10000.0
+500.0 is deposited .Current balance is10500.0
+200.0 is withdrawan. Current Balance is10300.0
+2000.0 is withdrawan. Current Balance is8300.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+N0-5 :
+
+package org.TeaPreparation;
+
+public interface Basictea {
+	
+	void preparetea(String step1);
+	void addmilk(String step2);
+	void addsugar(String step3);
+}
+
+
+package org.TeaPreparation;
+
+public class Tea implements Basictea{
+
+	@Override
+	public void preparetea(String preparetea) {
+		System.out.println("Prepare a tea with hot water and tea leaves");
+		
+	}
+
+	@Override
+	public void addmilk(String addmilk) {
+		System.out.println("To add a milk in the tea.");
+		
+	}
+
+	@Override
+	public void addsugar(String addsugar) {
+		System.out.println("To add a sugar in the tea.");
+		
+	}
+
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+No-6 :
+
+package org.TeaPreparation;
+
+public class Blacktea implements Basictea{
+
+	@Override
+	public void preparetea(String step1) {
+		System.out.println("Prepare a tea with hot water and tea leaves");
+	}
+
+	@Override
+	public void addmilk(String step2) {
+		System.out.println("");
+	}
+
+	@Override
+	public void addsugar(String step3) {
+		System.out.println("To add a sugar in the tea.");
+	}
+	
+	
+	
+}
+	
+
+package org.TeaPreparation;
+
+public class Greentea implements Basictea{
+
+	@Override
+	public void preparetea(String step1) {
+		System.out.println("Prepare a tea with hot water and green tea leaves");
+		
+	}
+
+	@Override
+	public void addmilk(String step2) {
+		System.out.println("");
+		
+	}
+
+	@Override
+	public void addsugar(String step3) {
+		System.out.println("To add a sugar in the tea.");
+		
+	}
+	
+}
+	
+
+package org.TeaPreparation;
+
+public class Herbaltea implements Basictea{
+
+	@Override
+	public void preparetea(String step1) {
+		System.out.println("Prepare a tea with hot water and herbal tea leaves");
+		
+	}
+
+	@Override
+	public void addmilk(String step2) {
+		System.out.println("");
+		
+	}
+
+	@Override
+	public void addsugar(String step3) {
+		System.out.println("To add a sugar in the tea.");
+		
+	}
+	
+
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+No-7 :
+
+package org.TeaPreparation;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Tea tea=new Tea();
+		System.out.println("Tea:");
+		tea.preparetea("step1");
+		tea.addmilk("step2");
+		tea.addsugar("step3");
+		
+		Blacktea blacktea=new Blacktea();
+		System.out.println("Black Tea:");
+		blacktea.preparetea("step1");
+		blacktea.addsugar("step3");
+		
+		Greentea greentea=new Greentea();
+		System.out.println("Green Tea:");
+		greentea.preparetea("step1");
+		greentea.addsugar("step3");
+		
+		Herbaltea herbaltea=new Herbaltea();
+		System.out.println("Herbal Tea:");
+		herbaltea.preparetea("step1");
+		herbaltea.addsugar("step3");
+		
+		
+		
+		
+		
+		
+	}
+
+}
+
+
+Output of Question no 5,6,7 =
+
+Tea:
+Prepare a tea with hot water and tea leaves
+To add a milk in the tea.
+To add a sugar in the tea.
+Black Tea:
+Prepare a tea with hot water and tea leaves
+To add a sugar in the tea.
+Green Tea:
+Prepare a tea with hot water and green tea leaves
+To add a sugar in the tea.
+Herbal Tea:
+Prepare a tea with hot water and herbal tea leaves
+To add a sugar in the tea.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+	
+
+
